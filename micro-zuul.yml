@@ -1,0 +1,17 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9991/eureka/
+
+zuul:
+  prefix: /lh
+  ignored-services: "*"
+  #ignored-services: "city"
+  routes:
+    city:
+      path: /mycity/**
